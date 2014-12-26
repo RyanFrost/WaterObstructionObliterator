@@ -1,7 +1,7 @@
 OBJS = main.o input.o
 CC = g++
 DEBUG = -g
-CXXFLAGS = -Wall -Wextra -c -std=c++0x $(DEBUG)
+CXXFLAGS = -Wall -Wextra -c $(DEBUG)
 
 TWOO : $(OBJS)
 	$(CC) $(OBJS) -o TWOO
