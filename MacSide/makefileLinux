@@ -1,12 +1,12 @@
 OBJS = main.o KeyboardInput.o SocketManager.o
-CC = clang++ -v
+CC = g++ 
 DEBUG = -g
-CXXFLAGS = -stdlib=libc++ -std=c++11 -c 
+CXXFLAGS = -std=c++11 -c 
 LFLAGS = -lSDL2
-IFLAGS = -I/Library/Frameworks/SDL2.framework/Headers
+IFLAGS = -I/usr/include/SDL2/
 
 main : $(OBJS)
-	$(CC) -stdlib=libc++ $(OBJS) -o main $(LFLAGS)
+	$(CC) $(OBJS) -o main $(LFLAGS)
 
 main.o : main.cpp
 	$(CC) $(CXXFLAGS) main.cpp $(IFLAGS)

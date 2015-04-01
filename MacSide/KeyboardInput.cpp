@@ -1,11 +1,15 @@
 #include "KeyboardInput.h"
 #include <unistd.h>
-
+#include <iostream>
 KeyboardInput::KeyboardInput()
 {
 
+	SDL_Window* window = NULL;
+	SDL_Surface* screenSurface = NULL;
+
 	if ( SDL_Init ( SDL_INIT_VIDEO ) < 0 )
 	{
+		std::cout << "SDL_Init failed to initialize video."<< std::endl;
 	}
 	
 	keyStates = SDL_GetKeyboardState( NULL ); 
