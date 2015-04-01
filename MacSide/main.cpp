@@ -4,6 +4,7 @@
 #include <array>
 #include <vector>
 #include <iostream>
+#include <unistd.h>
 
 int keyCombination(std::array<bool,5>);
 
@@ -33,8 +34,9 @@ int main()
 		{
 			break;
 		}
+	usleep(30000);
 	}
-
+	
 	return 0;
 }
 
