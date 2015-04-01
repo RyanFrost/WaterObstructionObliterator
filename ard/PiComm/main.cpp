@@ -13,7 +13,7 @@
 int main()
 {
 	SerialComm serialObj("/dev/ttyACM0",9600);
-	SocketManagerClient socketObj(27015,"100.65.9.28");
+	SocketManagerClient socketObj(27015,"100.65.8.57");
 	
 	std::vector<int> nums = {0,1,2,3,4};
 
@@ -25,8 +25,22 @@ int main()
 
 	if (data[0] =='1')
 	{
-		std::cout << "Handshake Successful." << std::endl;
+		std::cout << "Successful." << std::endl;
 	}
+
+	while(true)
+	{
+		data = socketObj.recvData();
+		int combo = (int)(data[0])-'0';
+		std::cout << combo << std::endl;
+		if(combo == 8)
+		{
+			break;
+		}
+	}
+
+
+	/*
 	int pinNum = 0;
 	int pinLevel = 0;
 	while( pinNum >= 0 && pinLevel >= 0)
@@ -61,7 +75,7 @@ int main()
 
 
 
-
+*/
 
 	return 0;
 }
