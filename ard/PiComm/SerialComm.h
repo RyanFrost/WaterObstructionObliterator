@@ -16,6 +16,7 @@ public:
 	~SerialComm(void);
 	int setPinDigital(int pinNumber, int pinLevel); // Pin level 0 or 1
 	int setPinAnalog(int pinNumber, int pinLevel); //Pin level b/w 0-255
+	void sendStr(std::string strToSend); //Used by setPin functions
 
 
 private:
@@ -25,7 +26,6 @@ private:
 	const int analogPins[7]  = {3,5,6,9,10,11,13};
 
 	//Methods
-	void sendStr(std::string strToSend); //Used by setPin functions
 
 
 };

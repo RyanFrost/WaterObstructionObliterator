@@ -32,7 +32,9 @@ int main()
 	{
 		data = socketObj.recvData();
 		int combo = (int)(data[0])-'0';
-		std::cout << combo << std::endl;
+		std::string comboStr(data.begin(),data.end());
+		comboStr += "\n";
+		serialObj.sendStr(comboStr);
 		if(combo == 8)
 		{
 			break;
