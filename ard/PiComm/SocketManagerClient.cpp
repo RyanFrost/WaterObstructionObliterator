@@ -31,26 +31,26 @@ SocketManagerClient::~SocketManagerClient()
 
 void SocketManagerClient::initSocket()
 {
-	std::cout << "Initializing connection to robot... " << std::flush;
+	std::cout << "Connecting to robot..." << std::flush;
 	
+	//Setup remote address struct
 	remoteHost.sin_family = AF_INET;
-	std::cout << ip <<std::endl;
+
 	if(inet_pton(AF_INET,ip.c_str(),&(remoteHost.sin_addr)) < 1 )
 	{
 		perror("IP address incorrect.");
 	}
+	
 	remoteHost.sin_port = htons(port);
 
 
 	//Create socket
 	
-	//std::cout << "Creating socket..." << std::endl;
 	if ((sockfd = socket(AF_INET, SOCK_DGRAM, 0)) < 0)
 	{
 		perror("cannot create socket");
 		return;
 	}
-	//std::cout << "Socket created." << std::endl;
 
 	
 }
