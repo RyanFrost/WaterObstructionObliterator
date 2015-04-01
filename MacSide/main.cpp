@@ -20,7 +20,7 @@ int main()
 
 
 	std::array<bool,5> keyStates;
-	while(false)
+	while(true)
 	{
 		keyStates = keyboard.getKeyPadStates();
 		int combo = keyCombination(keyStates);
