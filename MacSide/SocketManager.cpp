@@ -161,6 +161,11 @@ void SocketManager::loadDubToBuf(double dub)
 	std::copy(dubStr.begin(), dubStr.end(), back_inserter(buf));
 }
 
+void SocketManager::loadCharToBuf(char character)
+{
+	buf.clear();
+	buf[0] = character;
+}
 
 void SocketManager::cleanUpSocket(void)
 {

@@ -24,16 +24,21 @@ int main()
 	while(true)
 	{
 		keyStates = keyboard.getKeyPadStates();
-		int combo = keyCombination(keyStates);
-		piComm.loadIntToBuf(combo);
-		piComm.sendBuf();	
-		
-
-		
 		if (keyStates[4] == true)
 		{
+			piComm.loadCharToBuf('q');
+			piComm.sendBuf();
 			break;
 		}
+		else
+		{
+			int combo = keyCombination(keyStates);
+		
+			piComm.loadIntToBuf(combo);
+			piComm.sendBuf();	
+		}
+
+		
 	usleep(30000);
 	}
 	
